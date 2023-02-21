@@ -32,6 +32,8 @@ func (f *Formatter) Print(issues tflint.Issues, err error, sources map[string][]
 		f.compactPrint(issues, err, sources)
 	case "sarif":
 		f.sarifPrint(issues, err)
+	case "gitlab":
+		f.gitlabPrint(issues,err)
 	default:
 		f.prettyPrint(issues, err, sources)
 	}
